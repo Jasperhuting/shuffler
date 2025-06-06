@@ -1,0 +1,249 @@
+:root {
+  font-family: 'Circular', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #ffffff;
+  background-color: #121212;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --spotify-green: #1DB954;
+  --spotify-black: #121212;
+  --spotify-dark-gray: #212121;
+  --spotify-light-gray: #b3b3b3;
+  --spotify-white: #FFFFFF;
+}
+
+a {
+  font-weight: 500;
+  color: var(--spotify-green);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--spotify-black);
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-bottom: 1em;
+}
+
+#app {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.btn {
+  border-radius: 500px;
+  border: none;
+  padding: 0.8em 2em;
+  font-size: 0.9em;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn.primary {
+  background-color: var(--spotify-green);
+  color: var(--spotify-black);
+}
+
+.btn.primary:hover {
+  transform: scale(1.05);
+  background-color: #1ed760;
+}
+
+.btn.secondary {
+  background-color: transparent;
+  color: var(--spotify-white);
+  border: 1px solid var(--spotify-white);
+}
+
+.btn.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.time-range-selector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.btn.time-range {
+  background-color: transparent;
+  color: var(--spotify-light-gray);
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+}
+
+.btn.time-range:hover {
+  color: var(--spotify-white);
+}
+
+.btn.time-range.active {
+  color: var(--spotify-white);
+  background-color: var(--spotify-dark-gray);
+}
+
+.tracks-container {
+  margin-top: 2rem;
+}
+
+.tracks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.track-item {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  gap: 1rem;
+}
+
+.track-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.track-number {
+  width: 20px;
+  text-align: right;
+  color: var(--spotify-light-gray);
+  font-size: 0.9em;
+}
+
+.track-image img {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.track-info {
+  flex: 1;
+  text-align: left;
+  overflow: hidden;
+}
+
+.track-name {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-artist {
+  color: var(--spotify-light-gray);
+  font-size: 0.9em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-play {
+  color: var(--spotify-green);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.track-item:hover .track-play {
+  opacity: 1;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #121212;
+    background-color: #f8f8f8;
+    --spotify-black: #f8f8f8;
+    --spotify-dark-gray: #e8e8e8;
+    --spotify-light-gray: #666666;
+  }
+  
+  body {
+    background-color: #f8f8f8;
+  }
+  
+  .track-item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .btn.secondary {
+    color: #121212;
+    border: 1px solid #121212;
+  }
+  
+  .btn.secondary:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .btn.time-range.active {
+    color: #121212;
+    background-color: #e8e8e8;
+  }
+  
+  .header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
